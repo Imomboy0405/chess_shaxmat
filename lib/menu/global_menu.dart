@@ -18,26 +18,25 @@ class GlobalMenu extends Menu {
   Future<void> build() async {
     String katak1 = '', katak2 = '', figura;
     writeln(printIsColor(
-        text: ('\n                   -<< '
-                    'Boshqa qurilma bilan bog`lanib o`ynash'
-                .tr +
+        text: ('\n                   -<< ' +
+            'Play_The_Another_Device'.tr +
             ' >>-'),
         penColor: 226));
     String name1 = Chess.name;
     Display.newGameUpdates();
     write(printIsColor(
-        text: (' $name1 ' 'boshqa qurilma o`yinchisi ismini kiriting: '.tr),
+        text: (' $name1 ' + 'Enter_the_name_of_another_device_player'.tr),
         penColor: 51));
     String name2 = read;
 
     write(printIsColor(
-        text: ' Oq yoki Qora rangni tanlang(Oq = true / Qora = false): ',
+        text: 'Select_White_or_Black'.tr,
         penColor: 255));
     bool color = read.toBool;
     Chess.navbat = color;
 
     writeln(printIsColor(
-        text: (' O`yinni tugatish uchun Exit`ni kiriting!'.tr + '...'),
+        text: ('Enter_Exit_to_finish_the_game'.tr + '...'),
         penColor: 196));
     sleep(Duration(seconds: 1));
     writeln(
@@ -56,8 +55,8 @@ class GlobalMenu extends Menu {
       if (color) {
         if (Chess.navbat) {
           writeln(printIsColor(
-              text: (' $name1 ' "it's_your_turn".tr), penColor: 255));
-          write(printIsColor(text: ' ' 'figure_is_located'.tr, penColor: 226));
+              text: (' $name1 ' + "it's_your_turn".tr), penColor: 255));
+          write(printIsColor(text: ' ' + 'figure_is_located'.tr, penColor: 226));
           katak1 = read.toUpperCase();
           if (katak1 == 'EXIT') {
             katak2 = 'EXIT';
@@ -66,13 +65,13 @@ class GlobalMenu extends Menu {
                 NetworkService.apiChes,
                 NetworkService.headers,
                 {"from": name1, "to": name2, "location": s, "color": color});
-            writeln(printIsColor(text: ' O`yin tugatildi!', penColor: 196));
+            writeln(printIsColor(text: 'Game_over!'.tr, penColor: 196));
             await Navigator.pop();
           } else {
             if (!(Display.katakManzil(katak1) &&
                 Display.katakOqlardami(katak1))) {
               writeln(printIsColor(
-                  text: (" $name1 " "entered_an_error".tr), penColor: 196));
+                  text: (" $name1 " + "entered_an_error".tr), penColor: 196));
               continue;
             }
 
@@ -86,7 +85,7 @@ class GlobalMenu extends Menu {
             if (!(Display.katakManzil(katak2) &&
                 !Display.katakOqlardami(katak2))) {
               writeln(printIsColor(
-                  text: " $name1 " 'entered_an_error'.tr, penColor: 196));
+                  text: " $name1 " + 'entered_an_error'.tr, penColor: 196));
               continue;
             }
 
@@ -111,7 +110,7 @@ class GlobalMenu extends Menu {
           }
         } else {
           write(printIsColor(
-              text: ' ${name2}ning navbati kutilmoqda...', penColor: 46));
+              text: ' $name2' + 'is_waiting_for'.tr, penColor: 46));
           bool res = true;
           while (res) {
             index = '';
@@ -130,9 +129,9 @@ class GlobalMenu extends Menu {
                 index = item.id!;
                 if (item.location[0] == 'EXIT') {
                   writeln(printIsColor(
-                      text: ' $name2 o`yinni yakunladi!', penColor: 196));
+                      text: ' $name2' + 'finished_the_game'.tr, penColor: 196));
                   write(printIsColor(
-                      text: ' Ortga qaytish uchun enterni bosing: ',
+                      text: 'Press_enter_to_go_back'.tr,
                       penColor: 196));
                   read;
                   await Navigator.pop();
@@ -157,7 +156,7 @@ class GlobalMenu extends Menu {
       } else {
         if (Chess.navbat) {
           writeln(printIsColor(
-              text: ('  -' + name2 + " " + "it's_your_turn".tr), penColor: 0));
+              text: (' ' + name2 + " " + "it's_your_turn".tr), penColor: 0));
           write('figure_is_located'.tr);
           katak1 = read.toUpperCase();
           if (katak1 == 'EXIT') {
@@ -184,12 +183,12 @@ class GlobalMenu extends Menu {
             figura = figura
                 .replaceRange(figura.length - 1, figura.length, '')
                 .replaceRange(0, 1, '');
-            write(" $figura " "want_to_walk".tr);
+            write(" $figura " + "want_to_walk".tr);
             katak2 = read.toUpperCase();
             if (!(Display.katakManzil(katak2) &&
                 !Display.katakQoralardami(katak2))) {
               writeln(printIsColor(
-                  text: " $name2 " 'entered_an_error'.tr, penColor: 196));
+                  text: " $name2 " + 'entered_an_error'.tr, penColor: 196));
               continue;
             }
 
@@ -218,7 +217,7 @@ class GlobalMenu extends Menu {
           }
         } else {
           write(printIsColor(
-              text: ' ${name2}ning navbati kutilmoqda...', penColor: 46));
+              text: ' $name2' + 'is_waiting_for'.tr, penColor: 46));
           bool res = true;
           while (res) {
             index = '';
@@ -237,9 +236,9 @@ class GlobalMenu extends Menu {
                 index = item.id!;
                 if (item.location[0] == 'EXIT') {
                   writeln(printIsColor(
-                      text: ' $name2 o`yinni yakunladi!', penColor: 196));
+                      text: ' $name2' + 'finished_the_game'.tr, penColor: 196));
                   write(printIsColor(
-                      text: ' Ortga qaytish uchun enterni bosing: ',
+                      text: 'Press_enter_to_go_back'.tr,
                       penColor: 196));
                   read;
                   await Navigator.pop();
@@ -266,11 +265,15 @@ class GlobalMenu extends Menu {
       //shox berilgani tekshirish
       if (Attack.shohBerdi()) {
         if (Chess.navbat) {
-          writeln(printIsColor(text: ' $name2 sizga shox berildi!', penColor: 196));
+          writeln(
+              printIsColor(text: ' $name2 ' + 'you_were_given_a_horn'.tr, penColor: 196));
         } else {
-          writeln(printIsColor(text: ' $name1 sizga shox berildi!', penColor: 196));
+          writeln(
+              printIsColor(text: ' $name1' + 'you_were_given_a_horn'.tr, penColor: 196));
         }
-        writeln(printIsColor(text: ' O`yinni davob ettirish uchun Enter`ni bosing', penColor: 46));
+        writeln(printIsColor(
+            text: 'Enter_Exit_to_finish_the_game'.tr,
+            penColor: 46));
         read;
       }
 
@@ -286,9 +289,9 @@ class GlobalMenu extends Menu {
         break;
       }
     } while (1 > 0);
-    writeln(printIsColor(text: ' ' "the_end".tr, penColor: 196));
+    writeln(printIsColor(text: ' ' + "the_end".tr, penColor: 196));
     write(printIsColor(
-        text: ' Ortga qaytish uchun enterni bosing: ', penColor: 196));
+        text: 'Press_enter_to_go_back:'.tr, penColor: 196));
     read;
     await Navigator.pop();
   }

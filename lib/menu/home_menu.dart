@@ -13,10 +13,10 @@ class HomeMenu extends Menu {
     writeln(printIsColor(
         text: ('\n                   -<< ' + '<= Chess_app =>'.tr + ' >>-'),
         penColor: 226));
-    writeln(printIsColor(text: ' I.   O`ynash', penColor: 46));
-    writeln(printIsColor(text: ' II.  Sozlammalar', penColor: 123));
-    writeln(printIsColor(text: ' III. Ilovadan chiqish', penColor: 196));
-    write(printIsColor(text: '\n Buyruqni kiriting: ', penColor: 226));
+    writeln(printIsColor(text: ' I.   ' + 'Play'.tr, penColor: 46));
+    writeln(printIsColor(text: ' II.  ' + 'SETTINGS'.tr, penColor: 123));
+    writeln(printIsColor(text: ' III. ' + 'Exit_the_application'.tr, penColor: 196));
+    write(printIsColor(text: '\n ' + 'Enter_the_command:'.tr, penColor: 226));
     String selectMenu = read;
     await selectPlayMenu(selectMenu);
   }
@@ -34,7 +34,7 @@ class HomeMenu extends Menu {
       default:
         {
           writeln(
-              printIsColor(text: ' Noto`g`ri buyruq kiritildi!', penColor: 196));
+              printIsColor(text: 'Wrong_Command_Entered!'.tr, penColor: 196));
         }
     }
   }

@@ -12,14 +12,14 @@ class SettingsMenu extends Menu {
 
   Future<void> settings() async {
     writeln(printIsColor(
-        text: ('\n                   -<< ' + 'Sozlammalar'.tr + ' >>-'),
+        text: ('\n                   -<< ' + 'SETTINGS'.tr + ' >>-'),
         penColor: 226));
-    writeln(printIsColor(text: " 1. Tilni o`zgartirish:", penColor: 226));
-    writeln(printIsColor(text: ' 2. Mavzuni o`zgartirish', penColor: 197));
-    writeln(printIsColor(text: ' 3. Ismni o`zgartirish', penColor: 51));
-    writeln(printIsColor(text: ' 4. Saqlangan o`yinlarni boshqarish', penColor: 129));
-    writeln(printIsColor(text: ' 5. Bosh menyuga qaytish', penColor: 46));
-    write(printIsColor(text: '\n Buyruqni kiriting: ', penColor: 226));
+    writeln(printIsColor(text: " 1. "+"Language_Change:".tr, penColor: 226));
+    writeln(printIsColor(text: ' 2. '+'Theme_Update:'.tr, penColor: 197));
+    writeln(printIsColor(text: ' 3. '+'Change_Name'.tr, penColor: 51));
+    writeln(printIsColor(text: ' 4. '+'Manage_Saved_Games'.tr, penColor: 129));
+    writeln(printIsColor(text: ' 5. '+'Return_Main_Menu'.tr, penColor: 46));
+    write(printIsColor(text: '\n '+'Enter_the_command:'.tr, penColor: 226));
     String selectMenu = read;
     await selectSettings(selectMenu);
   }
