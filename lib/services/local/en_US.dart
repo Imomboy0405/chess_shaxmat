@@ -1,10 +1,13 @@
 const enUS = {
-  "first_player_name": "    Enter the name of the first participant (WHITE figures): ",
-  "second_p.layer_name": "    Enter the name of the second participant (BLACK FIGURES): ",
+  "first_player_name":
+      "    Enter the name of the first participant (WHITE figures): ",
+  "second_p.layer_name":
+      "    Enter the name of the second participant (BLACK FIGURES): ",
   "game_over": "   You have to attack the king to finish the game!",
   "the_game_begins": "   the game begins",
   "it's_your_turn": "    It's your turn",
-  "figure_is_located": "   Enter the address of the cell where your figure is located: ",
+  "figure_is_located":
+      "   Enter the address of the cell where your figure is located: ",
   "entered_an_error": "    You entered an error cell!",
   "want_to_walk": "    Enter the cell address where you want to walk",
   "can't_walk": "you can't walk like that ❌",
@@ -27,7 +30,8 @@ const enUS = {
   "Game_Number": " Enter the game number: ",
   "Successfully_Deleted!": " Successfully deleted! ",
   "Wrong_Name_Entered !!": " Wrong name entered !! ",
-  "All_games_successfully_deleted!": " All games have been successfully deleted! ",
+  "All_games_successfully_deleted!":
+      " All games have been successfully deleted! ",
   "Wrong_Command_Entered!": " Wrong command entered! ",
   "SETTINGS": "Settings ",
   "Language_Change:": " Language change ",
@@ -37,8 +41,10 @@ const enUS = {
   "Play_Pairs": " Play in pairs ",
   "Play_The_Another_Device": " Play with another device ",
   "Edit_Name": "Edit name:",
-  "Enter_the_name_of_another_device_player:": 'Enter the name of another device player:',
-  'Select_White_or_Black:': ' Select White or Black (White = true / Black = false): ',
+  "Enter_the_name_of_another_device_player:":
+      'Enter the name of another device player:',
+  'Select_White_or_Black:':
+      ' Select White or Black (White = true / Black = false): ',
   'Enter_Exit_to_finish_the_game!': ' Enter Exit to finish the game!',
   'Game_over!': ' Game over!',
   'is_waiting_for': ' is waiting for ...',
@@ -49,7 +55,6 @@ const enUS = {
   'Exit_the_application': 'Exit the application',
   'Enter_the_command:': 'Enter the command: ',
   'Select_the_program_language:': ' Select the program language: ',
-  'Program_language_successfully_changed!': ' Program language succesfully changed!'
-
-
+  'Program_language_successfully_changed!':
+      ' Program language succesfully changed!'
 };
