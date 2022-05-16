@@ -1,0 +1,16 @@
+const uzUZ = {
+  "first_player_name" : "Birinchi ishtirokchi ismingizni kiriting: ",
+  "second_player_name" : "Ikkinchi ishtirokchi ismini kiriting: ",
+  "game_over" : "O'yin tugashi uchun shohga hujum qilish kerak!",
+  "the_game_begins" : "O'yin boshlanmoqda",
+  "it's_your_turn" : "sizning navbatingiz!",
+  "figure_is_located" : "Figurangiz turgan katakni manzilini kiriting: ",
+  "entered_an_error" : "xato katak kiritdingiz!",
+  'want_to_walk': "yurishi kerak bo'lgan manzilni kiriting: ",
+  "can't_walk" : "bilan bunday yurish qila olmaysiz ❌",
+  "we" : "Siz",
+  "congratulations" : "Tabriklaymiz",
+  "won" : "G'olib bo'ldingiz!!!",
+  "the_end" : "O'yin tugadi!!!",
+  "<= Chess_app =>" : "Shaxmat dasturi",
+};
